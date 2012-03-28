@@ -1,0 +1,52 @@
+%% Created by Tim van Dalen on 28-03-2012
+%% This file is an extension of oz.sty and ltcadiz.sty
+%%
+%% This program is free software: you can redistribute it and/or modify
+%% it under the terms of the GNU General Public License as published by
+%% the Free Software Foundation, either version 3 of the License, or
+%% (at your option) any later version.
+%%
+%% This program is distributed in the hope that it will be useful,
+%% but WITHOUT ANY WARRANTY; without even the implied warranty of
+%% MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+%% GNU General Public License for more details.
+%%
+%% You should have received a copy of the GNU General Public License
+%% along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+\def\fileversion{1.0}
+\def\filedate{2012/03/28}
+\def\docdate {2012/03/28}
+\NeedsTeXFormat{LaTeX2e}[1994/12/01]
+\ProvidesPackage{oz-nolines}[\filedate\space\fileversion\space No-lines extension on Object Z macros]
+\message{`No-lines extension on Object-Z Macros' \fileversion\space <\filedate>}
+\RequirePackage{oz}
+\RequirePackage{ltcadiz}
+
+%Schema's without lines 
+\def\nobottomschema#1{\z@inoutbox\z@topline{$\,#1\,$}}
+\def\endnobottomschema{\endzed \z@makeinner \z@nopar}
+
+\def\notopschema{\z@inoutbox}
+\def\endnotopschema{\z@botline \endzed \z@makeinner \z@nopar}
+
+\def\nobothschema{\z@inoutbox}
+\def\endnobothschema{ \endzed \z@makeinner \z@nopar}
+
+%States without lines           
+\def\nobottomstate{\z@inoutbox\z@topline{}}
+\def\endnobottomstate{\endzed \z@makeinner \z@nopar}
+
+\def\notopstate{\z@inoutbox}
+\def\endnotopschema{\z@botline \endzed \z@makeinner \z@nopar}
+
+\def\nobothstate{\z@inoutbox}
+\def\endnobothschema{ \endzed \z@makeinner \z@nopar}
+
+
+%Add corners to schema's
+\def\nobottomschema#1{\zedcornerheight=0.7\baselineskip\z@inoutbox\z@topline{$\,#1\,$}\zedcornerheight=0pt}
+\def\notopschema{\zedcornerheight=0.7\baselineskip\z@inoutbox\zedcornerheight=0pt}
+
+
+\endinput
